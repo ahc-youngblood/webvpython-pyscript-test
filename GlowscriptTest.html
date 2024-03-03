@@ -37,16 +37,26 @@
 </head>
 
 <body class="GlowScriptBody">
-<link type="text/css" href="glowscript_libraries/jquery-ui.custom.css" rel="stylesheet" />
-<link type="text/css" href="glowscript_libraries/ide.css" rel="stylesheet" />
-<script type="text/javascript" src="glowscript_libraries/jquery.min.js"></script>
-<script type="text/javascript" src="glowscript_libraries/jquery-ui.custom.min.js"></script>
-<script type="text/javascript" src="glowscript_libraries/editor.js"></script>
-<script type="text/javascript" src="glowscript_libraries/RSrun.3.2.min.js"></script>
-<script type="text/javascript" src="glowscript_libraries/glow.3.2.min.js" charset="UTF-8"></script>
-<script type="text/javascript" src="glowscript_libraries/split.min.js"></script>
-<script type="text/javascript" src="glowscript_libraries/Roboto_Medium_ttf_sans.js"></script>
-<script type="text/javascript" src="glowscript_libraries/NimbusRomNo9L_Med_otf_serif.js"></script>
+<!-- "glowscript_libraries/jquery-ui.custom.css" -->
+<link type="text/css" href="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/jquery-ui.custom.css" rel="stylesheet" />
+<!-- "glowscript_libraries/ide.css" -->
+<link type="text/css" href="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/ide.css" rel="stylesheet" />
+<!-- "glowscript_libraries/jquery.min.js" -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/jquery.min.js"></script>
+<!-- "glowscript_libraries/jquery-ui.custom.min.js" -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/jquery-ui.custom.min.js"></script>
+<!-- "glowscript_libraries/editor.js" -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/editor.js"></script>
+<!-- "glowscript_libraries/RSrun.3.2.min.js" -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/RSrun.3.2.min.js"></script>
+<!-- "glowscript_libraries/glow.3.2.min.js"-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/glow.3.2.min.js" charset="UTF-8"></script>
+<!-- glowscript_libraries/split.min.js -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/split.min.js"></script>
+<!-- glowscript_libraries/Roboto_Medium_ttf_sans.js -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/Roboto_Medium_ttf_sans.js"></script>
+<!-- glowscript_libraries/NimbusRomNo9L_Med_otf_serif.js -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/NimbusRomNo9L_Med_otf_serif.js"></script>
 </body>
 
 <button onclick="runCode()">Run</button> 
@@ -77,9 +87,11 @@ function localCompile(compReady, errordiv) {
 	errordiv.innerHTML = ""
     let compiler_url
     if (lang == 'vpython') {
-        compiler_url = "glowscript_libraries/RScompiler." + gsversion + ".min.js"
+        //"glowscript_libraries/RScompiler." + gsversion + ".min.js"
+        compiler_url = "https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/RScompiler.3.2.min.js"
     } else
-        compiler_url = "glowscript_libraries/compiler." + gsversion + ".min.js"
+        //"glowscript_libraries/compiler." + gsversion + ".min.js"
+        compiler_url = "https://cdn.jsdelivr.net/gh/ahc-youngblood/glowscript@cd93c84d42b04991005e17339d18ac5ee8e7401b/GlowScriptOffline/glowscript_libraries/compiler.3.2.min.js"
     window.glowscript_compile = undefined
     $.ajax({
         url: compiler_url,
