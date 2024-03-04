@@ -79,14 +79,15 @@
         let pyodide = await loadPyodide();
         console.log(pyodide.runPython(`
             import sys
+            import numpy as np
             sys.version
         `));
     }
     pyodidemain();
-    async function importpacks(){
-        let np = await pyodide.pyimport("numpy");
-    }
-    importpacks();
+    //async function importpacks(){
+    //    let np = await pyodide.pyimport("numpy");
+    //}
+    //importpacks();
 </script>
 
 <script>
