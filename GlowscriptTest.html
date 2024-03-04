@@ -83,7 +83,10 @@
         `));
     }
     pyodidemain();
-    let np = await pyodide.pyimport("numpy");
+    async function importpacks(){
+        let np = await pyodide.pyimport("numpy");
+    }
+    importpacks();
 </script>
 
 <script>
