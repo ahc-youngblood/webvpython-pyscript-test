@@ -77,10 +77,10 @@
     // Pyodide loading BY
     async function pyodidemain(){
         let pyodide = await loadPyodide();
-        console.log(pyodide.runPython('
+        console.log(pyodide.runPython(`
             import sys
             sys.version
-        '));
+        `));
     }
     pyodidemain();
 </script>
