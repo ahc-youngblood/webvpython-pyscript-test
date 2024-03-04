@@ -77,6 +77,7 @@
     // Pyodide loading BY
     async function pyodidemain(){
         let pyodide = await loadPyodide();
+        let np2 = await pyodide.loadPackage("numpy")
         console.log(pyodide.runPython(`
             import sys
             import numpy as np
