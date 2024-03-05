@@ -207,6 +207,7 @@ function ready(program) {
     w[0].innerHTML = '<div id="glowscript" class="glowscript"></div>'
 
     window.__context = { glowscript_container: $("#glowscript") }
+    console.log(program)//look at the compiled program in console
     runprog(program)
 }
 
