@@ -193,16 +193,7 @@ function runCode() {
 }
 
 async function runprog(prog) { 
-    // Pyodide loading BY
-    async function pyodidemain(){
-        let pyodide = await loadPyodide();
-        let npx = await pyodide.loadPackage("numpy");
-        console.log(pyodide.runPython(`
-            import sys
-            sys.version
-        `));
-    }
-    pyodidemain();
+    
     try {
         eval(prog)
         await __main__()
@@ -217,7 +208,7 @@ function ready(program) {
     w[0].innerHTML = '<div id="glowscript" class="glowscript"></div>'
 
     window.__context = { glowscript_container: $("#glowscript") }
-    //console.log(program)//look at the compiled program in console
+    console.log(program)//look at the compiled program in console
     runprog(program)
 }
 
