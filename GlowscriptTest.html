@@ -73,7 +73,7 @@
 &nbsp;&nbsp;&nbsp;
 <input type="file" id="read_local_file"/>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     // Pyodide loading BY
     async function pyodidemain(){
         let pyodide = await loadPyodide();
@@ -90,8 +90,8 @@
     //}
     //importpacks();
 
-
-
+    -->
+<script>
 const gsversion = '3.2'
 let printpane = false
 let exporting = false // not currently in export mode
@@ -193,6 +193,16 @@ function runCode() {
 }
 
 async function runprog(prog) { 
+    // Pyodide loading BY
+    async function pyodidemain(){
+        let pyodide = await loadPyodide();
+        let npx = await pyodide.loadPackage("numpy");
+        console.log(pyodide.runPython(`
+            import sys
+            sys.version
+        `));
+    }
+    pyodidemain();
     try {
         eval(prog)
         await __main__()
@@ -207,7 +217,7 @@ function ready(program) {
     w[0].innerHTML = '<div id="glowscript" class="glowscript"></div>'
 
     window.__context = { glowscript_container: $("#glowscript") }
-    console.log(program)//look at the compiled program in console
+    //console.log(program)//look at the compiled program in console
     runprog(program)
 }
 
